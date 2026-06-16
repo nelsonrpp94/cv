@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nelson — CV</title>
+
+  <style>
+    :root {
+      --page-bg: #ffffff;
+      --text: #000000;
+      --muted: #444444;
+      --max-width: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: "Courier New", Courier, monospace;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .page {
+      width: min(92vw, var(--max-width));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      place-items: center;
+      margin-bottom: 56px;
+    }
+
+    .console {
+      width: min(92vw, 980px);
+      padding: 28px;
+      background: #fff;
+    }
+
+    .glitch-text {
+      font-size: clamp(1.15rem, 3.3vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: 0;
+      white-space: pre;
+      min-height: 1.2em;
+      margin-bottom: 24px;
+      font-variant-ligatures: none;
+      text-align: center;
+    }
+
+    .glitch-char {
+      color: #000;
+      font-weight: 400;
+      opacity: 1;
+    }
+
+    .floating-ascii-box {
+      position: fixed;
+      left: 0;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: clamp(10px, 1.8vw, 18px);
+      line-height: 1;
+      white-space: pre;
+      color: #000;
+      pointer-events: none;
+      user-select: none;
+      z-index: 50;
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
+    }
+
+    .content {
+      width: min(92vw, 760px);
+      margin: 0 auto;
+      text-align: left;
+      transform: translateX(70px);
+    }
+
+    .intro {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0 0 16px;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 40px 0 14px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+      list-style-position: outside;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      margin-top: 56px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .x-target {
+      display: inline-block;
+      position: relative;
+      font-weight: 700;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .x-target.glitching {
+      animation: x-glitch 90ms steps(2, end) infinite;
+    }
+
+    .x-target.glitching::before,
+    .x-target.glitching::after {
+      content: "X";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    .x-target.glitching::before {
+      transform: translate(-1px, -1px);
+      clip-path: inset(0 0 45% 0);
+    }
+
+    .x-target.glitching::after {
+      transform: translate(1px, 1px);
+      clip-path: inset(55% 0 0 0);
+    }
+
+    @keyframes x-glitch {
+      0% { transform: translate(0, 0) skew(0deg); }
+      25% { transform: translate(-1px, 1px) skew(-8deg); }
+      50% { transform: translate(1px, -1px) skew(6deg); }
+      75% { transform: translate(-1px, 0) skew(3deg); }
+      100% { transform: translate(0, 0) skew(0deg); }
+    }
+
+    @media (max-width: 760px) {
+      .content {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding-top: 28px;
+      }
+
+      .console {
+        padding: 18px;
+      }
+
+      .glitch-text {
+        white-space: normal;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Animated console">
+      <div class="console">
+        <div id="glitch-title" class="glitch-text"></div>
+      </div>
+    </section>
+
+    <section class="content">
+      <section class="intro" aria-label="Presentation">
+        <h1>I'm Nelson, and I love being up to date. My favorite hobby is to monitor the situation on <a id="x-target" class="x-target" href="https://x.com/nelson_rpp" target="_blank" rel="noopener noreferrer">X</a>.</h1>
+
+        <p>
+          I'm currently a cyber security specialist at Diconium, a Volkswagen company.
+          <strong>#safetycritical</strong>
+        </p>
+
+        <p>
+          Email:
+          <a href="mailto:nelson.pereira@diconium.com">nelson.pereira@diconium.com</a>
+        </p>
+      </section>
+
+      <section aria-label="Past experience">
+        <h2>Past experience:</h2>
+
+        <ul>
+          <li>Embedded developer at Bosch for IoT devices.</li>
+          <li>Embedded developer at Critical Techworks from BMW Group. <strong>#safetycritical</strong></li>
+          <li>Embedded developer at Critical Software for Rheinmetall and Bombardier. <strong>#safetycritical</strong></li>
+        </ul>
+      </section>
+
+      <section aria-label="Ideas">
+        <h2>Ideas:</h2>
+
+        <ul>
+          <li>
+            When we increase the level of abstraction in computing, the number of jobs increases,
+            never decreases. AI will create more software engineering jobs.
+          </li>
+          <li>
+            To win the AI race, you need an operating system. In 20 years, only Google,
+            Microsoft, and Apple will be major players in the AI space. Everything else will
+            disappear or become practically irrelevant.
+          </li>
+        </ul>
+      </section>
+
+      <p class="footer">Last updated: June 2026</p>
+    </section>
+  </main>
+
+  <pre id="floating-box" class="floating-ascii-box" aria-hidden="true">+------+
+|      |
++------+</pre>
+
+  <script>
+    const FINAL_MESSAGE = "The algorithm will always find you.";
+    const GLITCH_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%@&*!?/\\[]{}<>";
+
+    let activeIntervals = [];
+    let activeTimeouts = [];
+    let messageCycleTimeout = null;
+
+    function randomGlitchChar() {
+      return GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
+    }
+
+    function clearAnimation() {
+      activeIntervals.forEach(clearInterval);
+      activeTimeouts.forEach(clearTimeout);
+
+      if (messageCycleTimeout) {
+        clearTimeout(messageCycleTimeout);
+        messageCycleTimeout = null;
+      }
+
+      activeIntervals = [];
+      activeTimeouts = [];
+    }
+
+    function slotMachineText(element, finalText, options = {}) {
+      const {
+        spinSpeed = 40,
+        minSpinTime = 2700,
+        maxSpinTime = 3700,
+        holdTime = 7000
+      } = options;
+
+      clearAnimation();
+      element.innerHTML = "";
+
+      const chars = [...finalText];
+      const nonSpaceCount = chars.filter(char => char !== " ").length;
+      let finishedCount = 0;
+
+      const spans = chars.map(finalChar => {
+        const span = document.createElement("span");
+        span.className = "glitch-char";
+        span.dataset.finalChar = finalChar;
+        span.textContent = finalChar === " " ? " " : randomGlitchChar();
+        element.appendChild(span);
+        return span;
+      });
+
+      spans.forEach(span => {
+        const finalChar = span.dataset.finalChar;
+
+        if (finalChar === " ") {
+          span.textContent = " ";
+          return;
+        }
+
+        const interval = setInterval(() => {
+          span.textContent = randomGlitchChar();
+        }, spinSpeed);
+
+        activeIntervals.push(interval);
+
+        const stopTime = minSpinTime + Math.random() * (maxSpinTime - minSpinTime);
+
+        const timeout = setTimeout(() => {
+          clearInterval(interval);
+          span.textContent = finalChar;
+          finishedCount++;
+
+          if (finishedCount === nonSpaceCount) {
+            messageCycleTimeout = setTimeout(() => {
+              slotMachineText(element, finalText, options);
+            }, holdTime);
+          }
+        }, stopTime);
+
+        activeTimeouts.push(timeout);
+      });
+    }
+
+    function playGlitchText() {
+      const title = document.getElementById("glitch-title");
+
+      slotMachineText(title, FINAL_MESSAGE, {
+        spinSpeed: 40,
+        minSpinTime: 2700,
+        maxSpinTime: 3700,
+        holdTime: 7000
+      });
+    }
+
+    playGlitchText();
+
+    const floatingBox = document.getElementById("floating-box");
+    const xTarget = document.getElementById("x-target");
+
+    let mouse = {
+      x: window.innerWidth * 0.65,
+      y: window.innerHeight * 0.35
+    };
+
+    let follower = {
+      x: window.innerWidth * 0.5,
+      y: window.innerHeight * 0.35
+    };
+
+    let xGlitchInterval = null;
+    const X_GLITCH_CHARS = "X#%@&*!?01";
+
+    window.addEventListener("mousemove", event => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    });
+
+    function boxesOverlap(a, b) {
+      return !(
+        a.right < b.left ||
+        a.left > b.right ||
+        a.bottom < b.top ||
+        a.top > b.bottom
+      );
+    }
+
+    function startXGlitch() {
+      if (xGlitchInterval) return;
+
+      xTarget.classList.add("glitching");
+
+      xGlitchInterval = setInterval(() => {
+        xTarget.textContent = X_GLITCH_CHARS[Math.floor(Math.random() * X_GLITCH_CHARS.length)];
+      }, 65);
+    }
+
+    function stopXGlitch() {
+      if (xGlitchInterval) {
+        clearInterval(xGlitchInterval);
+        xGlitchInterval = null;
+      }
+
+      xTarget.classList.remove("glitching");
+      xTarget.textContent = "X";
+    }
+
+    function updateXGlitch() {
+      const squareRect = floatingBox.getBoundingClientRect();
+      const targetRect = xTarget.getBoundingClientRect();
+
+      if (boxesOverlap(squareRect, targetRect)) {
+        startXGlitch();
+      } else {
+        stopXGlitch();
+      }
+    }
+
+    function moveFloatingSquare() {
+      const rect = floatingBox.getBoundingClientRect();
+      const targetX = mouse.x - rect.width / 2;
+      const targetY = mouse.y - rect.height / 2;
+      const speed = 0.04;
+
+      follower.x += (targetX - follower.x) * speed;
+      follower.y += (targetY - follower.y) * speed;
+
+      floatingBox.style.transform = `translate3d(${follower.x}px, ${follower.y}px, 0)`;
+
+      updateXGlitch();
+      requestAnimationFrame(moveFloatingSquare);
+    }
+
+    moveFloatingSquare();
+  </script>
+</body>
+</html>
