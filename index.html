@@ -15,7 +15,7 @@
     .glitch-text { font-size: clamp(1.15rem, 3.3vw, 2.6rem); line-height: 1.2; letter-spacing: 0; white-space: pre; min-height: 1.2em; margin-bottom: 24px; font-variant-ligatures: none; text-align: center; }
     .glitch-char { color: #000; font-weight: 400; opacity: 1; }
     .floating-ascii-box { position: fixed; left: 0; top: 0; margin: 0; padding: 0; font-family: "Courier New", Courier, monospace; font-size: clamp(10px, 1.8vw, 18px); line-height: 1; white-space: pre; color: #000; pointer-events: none; user-select: none; z-index: 50; transform: translate3d(0, 0, 0); will-change: transform; }
-    .content { width: min(94vw, 1080px); margin: 0 auto; text-align: left; }
+    .content { width: min(94vw, 1080px); margin: 0 auto; text-align: left; transform: translateX(110px); }
     .intro { margin-bottom: 40px; }
     .intro h1, .intro p, .past-experience li { white-space: nowrap; }
     h1 { font-size: 1rem; font-weight: 400; margin: 0 0 16px; }
@@ -30,6 +30,7 @@
     .x-target.glitching::before { transform: translate(-1px, -1px); clip-path: inset(0 0 45% 0); }
     .x-target.glitching::after { transform: translate(1px, 1px); clip-path: inset(55% 0 0 0); }
     @keyframes x-glitch { 0% { transform: translate(0, 0) skew(0deg); } 25% { transform: translate(-1px, 1px) skew(-8deg); } 50% { transform: translate(1px, -1px) skew(6deg); } 75% { transform: translate(-1px, 0) skew(3deg); } 100% { transform: translate(0, 0) skew(0deg); } }
+    @media (max-width: 1180px) { .content { transform: none; } }
     @media (max-width: 900px) { .intro h1, .intro p, .past-experience li { white-space: normal; } }
     @media (max-width: 560px) { .page { padding-top: 28px; } .console { padding: 18px; } .glitch-text { white-space: normal; text-align: center; } }
   </style>
