@@ -18,6 +18,7 @@
     .content { width: min(94vw, 1080px); margin: 0 auto; text-align: left; transform: translateX(110px); }
     .intro { margin-bottom: 40px; }
     .intro h1, .intro p, .past-experience li { white-space: nowrap; }
+    .ideas ul { max-width: 93ch; }
     h1 { font-size: 1rem; font-weight: 400; margin: 0 0 16px; }
     h2 { font-size: 1rem; font-weight: 400; margin: 40px 0 14px; }
     p { margin: 0 0 14px; }
@@ -31,7 +32,7 @@
     .x-target.glitching::after { transform: translate(1px, 1px); clip-path: inset(55% 0 0 0); }
     @keyframes x-glitch { 0% { transform: translate(0, 0) skew(0deg); } 25% { transform: translate(-1px, 1px) skew(-8deg); } 50% { transform: translate(1px, -1px) skew(6deg); } 75% { transform: translate(-1px, 0) skew(3deg); } 100% { transform: translate(0, 0) skew(0deg); } }
     @media (max-width: 1180px) { .content { transform: none; } }
-    @media (max-width: 900px) { .intro h1, .intro p, .past-experience li { white-space: normal; } }
+    @media (max-width: 900px) { .intro h1, .intro p, .past-experience li { white-space: normal; } .ideas ul { max-width: none; } }
     @media (max-width: 560px) { .page { padding-top: 28px; } .console { padding: 18px; } .glitch-text { white-space: normal; text-align: center; } }
   </style>
 </head>
@@ -52,7 +53,7 @@
           <li>Embedded developer at Critical Software for Rheinmetall and Bombardier. <strong>#safetycritical</strong></li>
         </ul>
       </section>
-      <section aria-label="Ideas">
+      <section class="ideas" aria-label="Ideas">
         <h2>Ideas:</h2>
         <ul>
           <li>When we increase the level of abstraction in computing, the number of jobs increases, never decreases. AI will create more software engineering jobs.</li>
